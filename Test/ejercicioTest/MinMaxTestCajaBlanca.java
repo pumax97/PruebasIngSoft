@@ -34,7 +34,15 @@ public class MinMaxTestCajaBlanca {
 	
 	public void conditionCoverage(){
 		MinMax.minMax(xs);//todas las condiciones sean verdaderas
+		MinMax.minMax(xw);//condicion if linea 7 sea falsa por tamaño igual a cero
+		MinMax.minMax(xz);//condicion for sea falsa 
+	}
+	
+	@Test
+	
+	public void decisionConditionCoverage(){
 		MinMax.minMax(xt);//condicion if linea 7 sea falsa por null
+		MinMax.minMax(xs);//todas las condiciones sean verdaderas
 		MinMax.minMax(xw);//condicion if linea 7 sea falsa por tamaño igual a cero
 		MinMax.minMax(xz);//condicion for sea falsa 
 	}
