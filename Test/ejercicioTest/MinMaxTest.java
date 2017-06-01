@@ -9,7 +9,7 @@ import ejercicio.MinMax;
 
 
 public class MinMaxTest {
-	public int [] xs, xt, xp, xz, xw, xl, xm;
+	public int [] xs, xt, xp, xz, xw, xl, xm, xr;
 	
 	@Before
 	
@@ -21,6 +21,7 @@ public class MinMaxTest {
 		xw = new int[] {1, 5};//array esperado para xz
 		xl = new int[] {1, 2, -5, -8, 10};//array con valores negativos
 		xm = new int[] {-8, 10};//array esperado para xl
+		xr = new int[] {};
 	}
 	
 	@Test
@@ -45,5 +46,11 @@ public class MinMaxTest {
 	
 	public void arrayValoresEnteros(){
 		assertArrayEquals("Fallo en la funcion con valores negativos", xm, MinMax.minMax(xl));
+	}
+	
+	@Test
+	
+	public void arrayTamanoCero(){
+		assertEquals("Fallo en la funcion con array de tamaño cero", null, MinMax.minMax(xr));
 	}
 }
