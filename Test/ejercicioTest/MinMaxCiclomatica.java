@@ -26,4 +26,5 @@ public class MinMaxCiclomatica {
 	public void caminoDos(){ //1-2-3-4-5-12
 		MinMax.minMax(xt);
 	}
+	
 }
