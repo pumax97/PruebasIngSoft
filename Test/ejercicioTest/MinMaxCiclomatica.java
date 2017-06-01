@@ -6,13 +6,15 @@ import org.junit.Test;
 import ejercicio.MinMax;
 
 public class MinMaxCiclomatica {
-	int [] xs, xt;
+	int [] xs, xt, xz;
 	
 	@Before
 	
 	public void inicializar(){
 		xs = null;
 		xt = new int[] {2};
+		xz = new int[] {1,2};
+		
 	}
 	
 	@Test
@@ -23,8 +25,13 @@ public class MinMaxCiclomatica {
 	
 	@Test
 	
-	public void caminoDos(){ //1-2-3-4-5-12
+	public void caminoDos(){ //1-2-3-4-5-11-12
 		MinMax.minMax(xt);
 	}
 	
+	@Test
+	
+	public void caminoTres(){ //1-2-3-4-5-6-7-8-5-11-12
+		MinMax.minMax(xz);
+	}
 }
