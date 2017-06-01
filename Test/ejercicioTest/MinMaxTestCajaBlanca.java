@@ -6,13 +6,15 @@ import org.junit.Test;
 import ejercicio.MinMax;
 
 public class MinMaxTestCajaBlanca {
-	int [] xs, xt;
+	int [] xs, xt, xw, xz;
 	
 	@Before
 	
 	public void inicializar(){
 		xs = new int[] {1, -8, 10, 5, -1, 0};// array para statementCoverage
 		xt = null;
+		xw = new int[] {};
+		xz = new int[] {10};
 	}
 	
 	@Test
@@ -26,5 +28,14 @@ public class MinMaxTestCajaBlanca {
 	public void decisionCoverage(){
 		MinMax.minMax(xs);//decision verdadera
 		MinMax.minMax(xt);//decision falsa
+	}
+	
+	@Test
+	
+	public void conditionCoverage(){
+		MinMax.minMax(xs);//todas las condiciones sean verdaderas
+		MinMax.minMax(xt);//condicion if linea 7 sea falsa por null
+		MinMax.minMax(xw);//condicion if linea 7 sea falsa por tamaño igual a cero
+		MinMax.minMax(xz);//condicion for sea falsa 
 	}
 }
